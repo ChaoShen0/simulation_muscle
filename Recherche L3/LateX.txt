@@ -1,0 +1,884 @@
+\RequirePackage[hyphens]{url} %to break url between lines
+
+\documentclass[a4paper,11pt,notitlepage]{report}
+
+\usepackage[utf8]{inputenc}
+
+\usepackage[english]{babel}
+
+\usepackage[T1]{fontenc}
+
+\usepackage{geometry}
+
+\newgeometry{bottom=3cm}
+
+\usepackage{eurosym}
+
+
+\usepackage{epsfig}
+
+
+%tables
+
+\usepackage{tabularx}
+
+\usepackage{enumitem}
+
+\usepackage{multicol}
+
+\usepackage{booktabs}
+
+\usepackage{makecell} %pour des meilleures lignes de tableau
+
+\usepackage{longtable} %pour des tableaux sur plusieurs pages
+
+\usepackage{color, colortbl} % to color table lines
+
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\usepackage{pdfpages}
+\usepackage{tikz} % to flip images around
+
+\usepackage{url}
+\usepackage{graphicx}
+\graphicspath{{images/}}
+\usepackage{parskip}
+\usepackage{fancyhdr}
+\usepackage{vmargin}
+
+%%%%%% pour définir la commande \nobreakhline pour ne pas scinder le longtable à certains endroits
+
+\makeatletter
+
+\def\nobreakhline{%
+
+  \noalign{\ifnum0=`}\fi
+
+    \penalty\@M
+
+    \futurelet\@let@token\LT@@nobreakhline}
+
+\def\LT@@nobreakhline{%
+
+  \ifx\@let@token\hline
+
+    \global\let\@gtempa\@gobble
+
+    \gdef\LT@sep{\penalty\@M\vskip\doublerulesep}% <-- change here
+
+  \else
+
+    \global\let\@gtempa\@empty
+
+    \gdef\LT@sep{\penalty\@M\vskip-\arrayrulewidth}% <-- change here
+
+  \fi
+
+  \ifnum0=`{\fi}%
+
+  \multispan\LT@cols
+
+     \unskip\leaders\hrule\@height\arrayrulewidth\hfill\cr
+
+  \noalign{\LT@sep}%
+
+  \multispan\LT@cols
+
+     \unskip\leaders\hrule\@height\arrayrulewidth\hfill\cr
+
+  \noalign{\penalty\@M}%
+
+  \@gtempa}
+
+\makeatother
+
+%%%%%%%%%%
+
+
+\newcommand{\tabitem}{~~\llap{\textbullet}~~}
+
+\setlength{\columnsep}{1cm}
+
+
+%POUR LES LIENS HYPERTEXTES%
+\usepackage{amsmath}
+\usepackage{color} % May be necessary if you want to color links
+
+\definecolor{darkgray}{gray}{0.30} %définir la couleur gris foncé (utilisé pour les liens url)
+
+\usepackage{hyperref} % Pour avoir des liens hypertextes
+
+
+
+%% si je clique sur la table des matières dans le pdf, ca  me fait aller à  la section en question. yaaay
+
+
+%to define new colors
+
+\usepackage{xcolor}
+
+\usepackage{sectsty}
+
+\definecolor{firebrick}{rgb}{0.7, 0.13, 0.13}
+
+\definecolor{maroon}{rgb}{0.5, 0.0, 0.0}
+
+\definecolor{ferrarired}{rgb}{1.0, 0.11, 0.0}
+
+\definecolor{lightgray}{rgb}{0.90, 0.90, 0.90}
+
+
+%to change the chapter / section colors
+
+\chapterfont{\color{NavyBlue}}  
+
+\sectionfont{\color{gray}}
+
+
+\renewcommand{\baselinestretch}{1.1} 
+
+\setlength{\parindent}{0pt}
+
+\setlength{\parskip}{1.5mm} 
+
+\usepackage{fancyhdr} 
+
+
+\setmarginsrb{3 cm}{2.5 cm}{3 cm}{2.5 cm}{1 cm}{1.5 cm}{1 cm}{1.5 cm}
+
+\title{Modeling muscle and its simulation}								% Title
+\author{Tristan Venot}								% Author
+\date{\today}											% Date
+
+\makeatletter
+\let\thetitle\@title
+\let\theauthor\@author
+\let\thedate\@date
+\makeatother
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\theauthor}
+\lhead{\thetitle}
+\cfoot{\thepage}
+
+\headheight = 13.6pt %otherwise there is a problem
+
+
+\usepackage{graphicx}
+
+\usepackage{caption} %pour enlever le numero des figures
+
+
+\makeatletter
+
+\newcommand*{\toccontents}{\@starttoc{toc}}
+
+\makeatother
+\usepackage[style=ieee]{biblatex}
+\addbibresource{mod_lisation_muscle.bib}
+
+\usepackage{wrapfig}
+\urlstyle{same}
+\hypersetup{urlcolor=blue,linkcolor=black,citecolor=blue,colorlinks=true}
+%==========================================%
+
+\begin{document}
+
+
+\begin{titlepage}
+
+\thispagestyle{empty}
+
+\centering
+    \vspace*{0.5 cm}
+    \begin{minipage}[c]{.30\linewidth}
+    \includegraphics[scale = 1.4]{Logo_ISIR.png}\\[1.0 cm]				\end{minipage}\hfill
+    \begin{minipage}[c]{0.50\linewidth}
+	\includegraphics[scale = 0.25]{UPMC_logo.png}\\[1.0 cm]
+	\end{minipage}
+    \textsc{\LARGE université pierre et marie curie}\\[1.50 cm]% Iowa State University
+    \textsc{\normalsize formation cursus de master en ingénierie – 3e année- spécialité mécanique}\\[1.0 cm]
+	\textsc{\Large institut des systèmes intelligents et de robotique}\\[0.5 cm]	% This is what you use to add the course
+	\textsc{\large }\\[0.5 cm]		% M2I: Changes every year
+	\rule{\linewidth}{0.2 mm} \\[0.4 cm]
+	{ \huge \bfseries \thetitle}\\
+	\rule{\linewidth}{0.2 mm} \\[1.5 cm]
+	
+	\begin{minipage}{0.4\textwidth}
+		\begin{flushleft} \large
+			\emph{Author:}\\
+			\theauthor
+			\end{flushleft}
+			\end{minipage}~
+			\begin{minipage}{0.4\textwidth}
+			\begin{flushright} \large
+			\emph{Tutor:} \\
+			Ludovic Saint-Bauzel		% Student Roles **Try to add more than one name**
+		\end{flushright}
+	\end{minipage}\\[2 cm]
+	{Année Universitaire : 2017-2018}\\
+	{\large \thedate}\\[2 cm]
+ 
+	\vfill
+
+\end{titlepage}
+
+
+%ABSTRACT
+
+
+\tableofcontents
+
+
+\newpage
+
+
+\vspace*{2cm}
+
+
+\begin{abstract} % french here
+This research internship in ISIR laboratory dealt with the modeling and the simulation of muscle in the specific case of spasticity phenomenon. The purpose of the project was to take stock of muscle models' state of the art and to simulate a demonstrator thanks to OpenSim software.
+
+
+\begin{center}
+
+\textbf{Résumé}
+\end{center} 
+\paragraph{}
+Ce stage de recherche au sein du laboratoire ISIR portait sur la modélisation et la simulation de muscle dans le cas spécifique du phénomène de spasticité. Le stage a eu pour but de dresser un état de l'art et de simuler à l'aide du logiciel OpenSim un démonstrateur. 
+% english here
+
+
+
+
+\end{abstract}
+
+
+\newpage
+
+
+\vspace*{2cm}
+
+
+\begin{center}
+
+\textbf{Remerciements}
+\end{center} 
+Je tiens à exprimer mes plus sincères remerciements à mon tuteur M. Ludovic Saint-Bauzel pour avoir pris le temps de m'expliquer, m'aider et me faire partager ses connaissances dans de nombreux et différents domaines. Il m'a donné la chance de travailler sur un projet passionnant et des plus enrichissants. Je tiens aussi à remercier M. Kondo et Mme Dumontet pour les explications qu'ils m'ont obligeamment données sur la mécanique des milieux continus.
+
+
+
+
+
+
+\chapter{Introduction}
+
+\paragraph{}
+	Understanding and replicating human motor behavior is one of the major challenge of research laboratories specialized in health engineering nowadays. This challenge nourishes hopes of changing radically our way of thinking the illness and giving the possibility to enhance people at a level no one could have imagine before. The project at ISIR laboratory was an appetizer of what means to pass from scientific theoretical models to the reality of the living.  
+\paragraph{}
+During a period of almost five month, a study of muscle models was conducted and it led to a simulation of a particular muscle phenomenon : the spasticity.
+The project was composed of three different steps which are shown in details in the Gantt diagram \ref{Planning}. It began in August with a research survey on the different models of muscle made from 1920's to now, followed by a work of simulation and computational learning. It ended with the creation of a muscle model and the integration of the phenomenon of spasticity to a demonstrator.
+The spasticity phenomenon is characterized by an unwilling contraction of the muscle due to a too quick motion, in real terms it means the muscle is totally blocked and can not relax. This phenomenon is present on people suffering from stroke or multiple sclerosis\cite{martin_epidemiological_2014}.
+\paragraph{}
+The project was supposed to be a starter to a possible research work conducted by Mr Saint-Bauzel, lecturer at Université Pierre et Marie Curie and researcher on physical human-robot interaction and robotical mobility. The project would use an exoskeleton which could help people in their moves. By knowing more about the muscle itself and its behavior on healthy subjects, models could be adapted to the situation. The goal is with time to implement the new models to an exoskeleton.
+\paragraph{}
+First of all, we are going to briefly present the laboratory and its research teams to understand why the theme can be relevant for their institute. After that there will be a description of what is generally a good simulation. A state of the art of muscle models will be exposed and explained. In addition to that the report will have a presentation of the software OpenSim used during the internship. Finally there will be a development on what have been done and following this, a critical review of the project. 
+
+
+%%%%%%%%%%%%%%%%%%%%
+
+         %%
+
+         %%
+
+%%%%%%%%%%%%%%%%%%%%
+\chapter{ISIR : Institut des systèmes intelligents et de robotique}
+
+\section{Description}
+\paragraph{}
+ISIR is a research laboratory at the Université Pierre et Marie Curie which conducts crossdisciplinary researches in complex mechanical systems, systems and control, and signal processing. The laboratory makes application of robotics and intelligent systems to biology, medicine, and neuroscience through fundamental and applied research. ISIR is associated with CNRS (Centre National de le Recherche Scientifique) and is a \textit{Unité Mixte de Recherche} (UMR) which means that there are researches and teaching in the same center. ISIR was founded in 2007 from the fusion of the \textit{ Laboratoire de Robotique de Paris} (LRP), the \textit{Groupe Perception et Réseaux Connexionnistes} a branch of the \textit{Laboratoire des Instruments et Systèmes d'Ile de France} (LISIF), and the AnimatLab group from the \textit{Laboratoire d'Informatique} of UPMC (LIP6).\cite{noauthor_isir_nodate-2}
+
+\section{A laboratory which covers different fields}
+\paragraph{}
+ISIR regroups different teams working on various subjects linked to intelligent systems and robots. There are four teams which are composed of permanent members and non-permanent members, all the members are researchers or teacher-researchers. In addition to that, postgraduates and master students work in the different teams and follow the research plans established by the laboratory. In total, there are 155 persons who are currently working in the laboratory.
+\subsection{The group Interaction}
+\paragraph{}
+"Interaction" team has for goal to develop sciences and techniques which make agents in communication with physic and virtual worlds through optic, mechanic and acoustic. The team is composed of four groups : « Perception mécanique et mécanique de la perception » (PEPEME),« Micro-nano robotique » (MICROB), « Perception Active Multimodale » (PAM), « Intégration Multimodale, Interaction et Signal Social » (IMI2S).
+
+\subsection{The group SYROCO}
+\paragraph{}
+The team covers several fields of "classic" robotic from manipulation to locomotion on land, in the air or in water. The different problems share some common features such as mechanical systems or their structure or their evolution model. The team has four axes of researches : \begin{itemize}
+\item Manipulation and redundancy
+\item Mobility and redundancy
+\item Dynamic interaction systems control
+\item State estimation
+\end{itemize}
+
+
+\subsection{The group AMAC}
+\paragraph{}
+The group focuses on perceptual function models elaboration which can be motor or cognitive. It has two main purposes : the understanding of the leaving through mathematical and computational modeling of cognitive and motor functions and the possibility to endow robots with motor and cognitive abilities integrating decision and machine learning. The team relies on the interaction between biology and engineering sciences.
+
+\subsection{The group AGATHE}
+\paragraph{}
+The group AGATHE\cite{noauthor_isir_nodate-1} in which works Mr Saint-Bauzel focuses on conception and control of robotic devices for assistance of human motions. It has two medical outcomes : 
+\begin{itemize}
+\item Assistance in medical and surgical interventions.
+\item Assistance for people suffering from motor deficit.
+\end{itemize}
+\paragraph{}
+The project complies with this idea of helping people suffering from a motor illness (the spasticity phenomenon). Mr Saint-Bauzel started the idea of an exoskeleton which could adapt to this phenomenon and help the movement of the patient.
+
+
+
+
+
+\chapter{Purpose of models-the key to perform a good simulation}
+
+\section{Understanding natural behavior}
+\paragraph{}
+	In order to understand the behavior of nature, we try to adapt to the mathematical world what we can see and handle. The law in mathematics are really important because thanks to them, we can calculate and put numbers on something originally incalculable.
+    Modeling consists in applying simple natural behavior (which are easy to put into equations) to complex natural behavior, for example modeling a flow by an electrical current. 
+\paragraph{}    
+    The idea is to predict our world thanks to models which can be implemented in computers. Of course, a model close to reality is harder for a computer to process.
+    During this research project, it appeared that there were many ways to model a muscle; there are different level of complexity for models, sometimes one simply assimilates muscle to springs but sometimes it requires high mathematical knowledge such as in the case of finite element methods.
+    
+    The study deals with the spasticity of muscle: "a motor disorder characterized by a velocity-dependent increase in tonic stretch reflexes ('muscle tone') with exaggerated tendon jerks, resulting from hyperexcitability of the stretch reflex, as one component of the upper motor neuron syndrome."\cite{koch-weser_spasticity_1981}. Understanding this particular behavior in details will give us the key to develop a good model and \textit{a fortiori} a good simulation.
+    
+\section{Accurate \& Relevant}
+\paragraph{}
+During the study, it was clear that sometimes models could be inaccurate, it means that their approach to imitate natural behavior was too tricky and in the end irrelevant. More than that, a model can work on paper but is impossible to implement on a computer.  
+
+\paragraph{}
+In this particular field of study, a lot of people did imagine how to describe muscle behavior thanks to mathematical tools. However the comprehension of natural element such as a muscle can change through time, the first models describing muscle are not accurate anymore. An old model can be inaccurate and irrelevant now.
+
+\section{Balance between precision and computer capability}
+\paragraph{}
+We use models to predict a natural behavior, but the calculus is most of the time tremendous, that's why we use computers. A mathematical model is computed thanks to a discretization process. It is during this process that we can observe the efficiency of a model, if it is easily discretized, the computer will have no problems to predict the further solutions. If however, the mathematical model is hardly discretized, the computer will take much more time to process information and give solutions.
+
+\paragraph{}
+The precision of a model is linked to the mathematical complexity of it, the closer we get to the natural event, the harder it is to describe. In order to create a good computational model, there must be a just balance between the precision and the difficulty of computation.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+         %%        %%
+
+         %%        %%  
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{State of the art}
+\paragraph{}
+The main work during the first months of internship was the study of previous muscle models, an organization was made following relevance, accuracy and difficulty criteria. 
+The thesis of Mr Berranen \cite{berranen_3d_2012} from Montpellier's University and the article of Mr Van der Linden \cite{linden_mechanical_1998} from Twente's University were used to enter in the field of study, thanks to their work it was possible to know where to search and to understand the different muscle models.
+
+\section{Biological understanding}
+\subsection{Huxley's model - completely irrelevant}
+\paragraph{}
+During the study, a problem appeared : one of the first models was focused on biological behavior of the muscle. In 1957, A.F Huxley \cite{huxley_muscle_1957} described the contraction of the muscle at a molecular level. Huxley explained that the contraction of the muscle was due to the friction of actin myofilaments on myosin myofilaments. Thanks to those proteins, a molecular transformation happens and the result is a muscle contraction. The main problem is that it is almost impossible to use this model in a simulation. 
+
+\begin{equation}
+\frac{\partial{n(\zeta,t)}}{\partial{t}} + v(t)\frac{\partial{n(\zeta,t)}}{\partial{x}} = r(t)f(\zeta)[(a(l_s)-n(\zeta,t)]-g(\zeta)n(\zeta,t)
+\end{equation}
+
+\paragraph{}
+$l_s$ représents the length of a sarcomere ( the basic unit of striated muscle tissue), $n(\zeta,t)$ distribution function of the number of brodges, $\zeta$ a normalized length, $v(t)$ shortening speed of myofilaments and $r(t)$ an activating factor linked to calcium.
+
+\paragraph{}
+Huxley's model seemed inappropriate to goal's study, it takes into account to many external variables (constants describing connexions between molecules and the travel of proteins through muscle.
+
+
+
+\section{Mechanical point of View : the oldest one}
+\subsection{Hill's model}
+\paragraph{}
+The first person to properly formalize a muscle model was A.V.Hill \cite{hill_heat_1938} in 1922, he basically hooked weights to a muscle and stimulated it. Based on the muscle's variation of length, he was able to create a constitutive equation. The model defined the muscle as 3 springs which represented the contraction, and the resistant, he could come up to a force close to reality.
+
+\begin{figure}[h!]
+\center 
+\includegraphics[scale = 0.4]{231px-Hill_muscle_model_svg}
+\caption{Representation of muscle's behavior from Hill's model\cite{hill_heat_1938}}
+\end{figure}
+
+However this model does not take into account the physiological reality of a muscle, the deformation and the variation of shape are out of the question, because the model is simple, it has been used in simulation very often.
+
+The equations presented below explain how the model works.
+
+\begin{equation}
+F_t = F_m cos(\alpha) = F_z |f_a(l)f(v)a(t) + f_p(l)|cos(\alpha)
+\end{equation}
+$F_t$ : sinewy force,
+$F_m$ : muscular force,
+$F_z = PCSA \sigma_m$ : isometric muscular force (PCSA : Surface section of the muscle , $\sigma_m$ : maximal constrain)
+$a(t)$ activation level,
+\begin{equation}
+f(v) = \frac{V_{sh}(V_{max} + L_{c0}\dot{\epsilon_c})}{V_{sh}V_{max} + L_{c0}\dot{\epsilon_c}}
+\end{equation}
+with $V_{max} = 5(1+a(t)f_l(\epsilon))$ and $\epsilon = \frac{L(t)}{L_{c0}-1}$, $\dot{\epsilon} = \frac{\dot{L}}{L_{c0}-1}$
+\begin{equation}
+f_a(l) = \exp{(-(\frac{\epsilon}{b})^2)}
+\end{equation}
+
+\begin{equation}
+f_l(l) = -K(L(t)-L_{c0}
+\end{equation}
+We pose several parameters of the system, we use the fundamental principle of the dynamics to obtain the position at the following time.
+\paragraph{}
+$C_1 = \frac{F_z}{m}cos(\alpha)$ , $J = (\frac{\epsilon}{b})^2)$, $\epsilon = 0.5$, $\dot{\epsilon} = 0.25$, $b =1$, $\xi = L_n -L_0 =-0.5$
+
+\begin{equation}
+L_n = \frac{t^2}{2}C_1\exp(-J)\frac{5V_{sh}(1+a(t)\exp(-J))+V_{sh}L_0\dot{\epsilon}}{V_{sh}(1+a(t)\exp(-J))+L_0\dot{\epsilon}} + tC_1\xi + L_0
+\end{equation}
+
+\begin{equation}
+dL_n = tC_1\exp(-J)\frac{5V_{sh}(1+a(t)\exp(-J))+V_{sh}L_0\dot{\epsilon}}{V_{sh}(1+a(t)\exp(-J))+L_0\dot{\epsilon}} + C_1\xi
+\end{equation}
+
+We can write : $\epsilon = \frac{L_n}{L_0 - 1}$ et $\dot{\epsilon} = \frac{dL_n}{L_0 -1}$ J takes new value $(\frac{\epsilon}{b})^2$
+$L_{n+1}$ takes a new value until the maximum of contraction.
+\paragraph{}
+This method is relatively reliable, and easy to code, the derivative is easily discretized thanks to Runge-Kutta methods\cite{rajagopal_full-body_2016}.
+
+
+\subsection{Mass-Spring model}
+
+\paragraph{}
+The original Hill's model has been modified through ages, researchers upgraded it in order to be closer to reality, adding springs which could play as fatigue factors. The idea was to represent the muscle as a sum of small springs which could as a result simulate a muscle with great accuracy even if it does not follow the muscle's physiological reality\cite{dao_modeling_2009}.
+
+
+
+\section{The most accurate and recent}
+\subsection{Based on continuum mechanics}
+\paragraph{}
+The best way to properly simulate the muscle behavior is to properly study the mechanical muscle's behavior. Continuum mechanics allow us to create a fine-mesh. This mesh is the perfect way to study in details the constrains and the deformations on a local specific area, more than that they give us the possibility to fully describe how the muscle's strength is linked to its length and  its shape. The main idea is to consider that the mesh is composed of dots surrounding the muscle and each of them has specific characteristics and can be consider as small springs getting deformations in 6 dimensions (3 for translation and 3 for rotation)\cite{dormieux_mecanique_2017}.
+
+\begin{figure}[h!]
+\center 
+\includegraphics[scale = 0.3]{muscle_maillage}
+\caption{Representation of the muscle's mesh \cite{webb_3d_2014}}
+\end{figure}
+
+\subsubsection{Theory}
+\paragraph{}
+We are going to summarize what's essential for understanding continuum mechanics in our particular case. We are going to see in details the particle's behavior thanks to Lagrangian representation, we will evaluate the deformations and establish behavior's law for muscle.
+
+The Lagrangian representation allow us to follow a particle's trajectory over time. We have $\underline{x} = \underline{\Phi}(\underline{X},t)$. From this equation we can find the transformation gradient  : $\underline{\underline{F}} = \underline{\underline{\nabla}}\,\underline{\Phi} (\underline{X},t)$.
+We can now study properly the deformations of a muscle with the Green-Lagrange tensor.
+
+\begin{eqnarray}
+\underline{\underline{e}} = \frac{1}{2} (\underline{\underline{F}}^t\underline{\underline{F}} - \underline{\underline{1}})\nonumber
+\end{eqnarray}
+
+However, in our case, the transformations of the muscle are significant, we have to deal with large variations of volume and length due to the softness of the muscle. That means the infinitesimal strain tensor can't be used, which could have been useful because it is far less complex to deal with.
+
+\paragraph{}
+The study restrains to two different behavior laws : elastic behavior and hyper-elastic behavior. The book of Mr Berthelot \cite{berthelot_elastic_1999} and the course of Mines-Paritech \cite{cantournet_comportement_2013} \textit{focused on material behavior in the case of huge deformations} were used to understand what this laws were about and how to apply them to muscles.
+
+\subsubsection{Elastic behavior}
+
+This law is based on generalization of Hooke's law and was found by experimental observations. It describes the linear elastic behavior.
+
+\begin{eqnarray}
+\begin{bmatrix}
+\sigma_1 \\
+\sigma_2 \\
+\vdots\\
+\sigma_n\\
+\end{bmatrix} =
+\begin{bmatrix}
+C_{11}&C_{12}&\dots&C_{1n}\\
+C_{21}&C_{22}&\dots&C_{2n}\\
+\vdots\\
+C_{n1}&C_{n2}&\dots&C_{nn}\\
+\end{bmatrix}
+\begin{bmatrix}
+\epsilon_1 \\
+\epsilon_2 \\
+\vdots\\
+\epsilon_n\\
+\end{bmatrix}
+\end{eqnarray}
+Or more known in a condensed form : $ \sigma = C \epsilon $. Where C is the stiffness matrix.
+\paragraph{}
+After the consultation of Mr Kondo (Jean Le Rond D'Alembert Institute researcher), it is rational to make an hypothesis on the muscle, the hypothesis that it is an orthotropic material with a an axis of revolution can be made, which means that 3 symmetry plans mutually orthogonal can be found in a muscle. From this, is obtained a matrix which contains only 9 independent elasticity constants. In this case the goal is to determine Young's modulus of the muscle in order to set the limits of muscle's deformation. Thanks to a memoir from University of Sherbrook, one could establish that Young's modulus is 210 MPa when the curve of strain function of deformation is linear. This study \cite{leonard_modelisation_2013} gave me a scale for muscles, it was possible to know what was the maximal deformation and also what was the optimal length (0.11 m for an accurate muscle model) and the maximal strength (almost 82 N).
+\paragraph{}
+However the muscle is considered as an hyper-elastic material almost incompressible\cite{robert_etude_2009}. 
+The problem of muscle is that the transformations sustained by muscles are tremendous, the associated deformations can not be linearized like in other simpler studies. The second law of Saint-Venant-Kirchoff was used as a first approach, it was the easier way to analyze a muscle because the law is an extension of linear elastic materials which was already knew.
+
+In the Saint-Venant-Kirchoff law, the energy must be taken into account in order to describe the strains applied to the system.
+The law was used to compute a matrix of strain which would respond to deformations and movements applied to the system.
+This are the equations to make the muscle study : 
+
+\begin{equation}
+\underline{\underline{S}} = \lambda tr(\underline{\underline{e}}) + 2\mu\underline{\underline{e}} 
+\end{equation}
+Where $S$ is the second Piola–Kirchhoff stress and \underline{\underline{e}} the Lagrangian Green strain, $\lambda$ and $\mu$ are the Lamé constants.
+
+From the other perspective, the strain-energy density function for the St.Venant–Kirchhoff model is :
+
+\begin{equation}
+W(\underline{\underline{e}} = \frac{\lambda}{2} tr(\underline{\underline{e}})^2 + \mu tr(\underline{\underline{e^2}})
+\end{equation}
+
+The link between $W$ and $S$ is simple :
+\begin{equation}
+S = \frac{\partial W}{\partial e}
+\end{equation}
+
+
+There are plenty of techniques to compute this law but the problem arisen by the muscle is its discretization.The muscle's mesh must be accurate but must not require too much computer memory. The solution that has been found is the finite element method. 
+
+\subsection{Finite Element Method's model (FEM)}
+\paragraph{}
+FEM consists in creating a common shape for part of the mesh, it can be a square, a triangle, a tetrahedron or a cuboid shape. Instead of studying the all surface, the calculation focuses on a small element and its nodes (particles) which have the properties have your system. After that the solution is integrated on the total surface of the muscle for example.
+The bonds between the different surfaces are considered as springs in every directions of translation and rotation. 
+
+\begin{figure}[h!]
+   \begin{minipage}[c]{.46\linewidth}
+      \includegraphics{ImagesRapport/springmuscle1.PNG}
+      \caption{Elastic surface of the muscle surface\cite{nedel_real_1998}}
+   \end{minipage} \hfill
+   \begin{minipage}[c]{.46\linewidth}
+      \includegraphics{ImagesRapport/springmuscle2.PNG}
+      \caption{Angular springs for a nod \cite{nedel_real_1998}}
+   \end{minipage}
+\end{figure}
+
+
+
+
+That is why the method is complex to integer on the all surface because there are a lot of data to process depending on the thickness of the mesh (the thiner it is the closer it gets to reality). In the the figure below\ref{FEM}, can be seen, the difference of precision between a perfect mathematical models and what can be done in reality: \clearpage
+
+\begin{figure}[h!]
+\center 
+\includegraphics[scale = 0.5]{ImagesRapport/FEM.PNG}
+\caption{The difference between the perfect shape and real simulation\cite{nedel_real_1998}}\label{FEM}
+\end{figure}
+
+\paragraph{}
+The knowledge of the project was based on th work of J.Teran and his team :\textit{ Finite Volume Methods for the Simulation of Skeletal Muscle}\cite{j._teran_finite_2003}, in their work they describe how the finite element method is applied to hyper elastic laws and even visco-elastic laws. First of all they take a small element which is a tetrahedron and integrate the strain on its volume :
+
+\begin{equation}
+g_i = \int_\omega \sigma \nabla N_i^T d\omega
+\end{equation}
+where $N_i$ represents the different linear basis functions ($n$ in every surfaces).
+The solution of this is:
+\begin{equation}
+G = \sigma D_s^{-T} \nu
+\end{equation}
+with $\nu$ the deformed volume of the tetrahedron and $D_s^{-T}$ the matrix which contains the edge vectors of the tetrahedron.
+
+It is possible to obtain a relation between the force of the muscle and the different constraints applied to it, however it becomes quickly complex when the muscle endure rotations and huge deformations. But thanks to FEM, all the development lead to a differential equation which can be discretized \cite{berranen_3d_2012}.
+First there is this equation : 
+\begin{equation}
+f = B^T\sigma = Ku
+\end{equation}
+with $B$ the strain-displacement matrix,$\sigma$ the stress, $K$ the stiffness matrix of the system and $u$ the displacement of particles. 
+In case of huge deformations, the problem can't be solved but with corotational finite element method, it changes into a simple differential equation describing a spring like behavior which is easier to compute \cite{vichnevetsky_elliptic_1981}.
+\begin{equation}
+f = M\ddot{u} + C\dot{u} + Ku
+\end{equation}
+$M$ is the mass matrix, $C$ the damping and $K$ depends on the geometry and have to be recalculated at each time step where positions and velocities are assumed to be known.
+The FEM permits to reduce the difficulty of equations but as it is shown, the matrices take the number of particles the study wants it to have so, if the mesh of tetrahedron for example  is too important, there will be to much element to process.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\chapter{OpenSim- The tremendous software}
+
+\section{Created by Stanford}
+\paragraph{}
+OpenSim is an application developed by Simbios, a NIH Center for Biomedical Computation at Stanford University. The center has been founded in 2004, and is charged to provide  software and computational tools for physics-based modeling and simulation of biological structures. OpenSim was designed to help biomechanics research by providing a common framework for investigation and a platform for exchanging complex musculo-skeletal models. Launched in 2007, it was possible to add new models and visualize them with a 3D graphical interface. Since then, the software had several improvements, such as creating perturbation locally in muscles, creating analysis and simulation and the latest version (3.3 July 2015) can use Python and Matlab and is far more stable than before. The main idea of this software is to use the same bases for scientists in order to innovate faster and more efficient. According to biomechanic students in Stanford, it can be used in surgery to better analyze what particular muscle must be cut, but also to design better prosthetics and exo-skeletons. It responded perfectly to the field of study. 
+\section{A worldwide software}
+\paragraph{}
+The particularity of this software is to be completely free, designed with open-source spirit, the community from all around the world enriches every time the software. The software is an interface which is an empty shell that uses files containing structures and  connexions information. \textit{C++} codes are the heart of OpenSim, people share their codes in order to improve their models. To do that, they have common libraries and  common language (C++ using specific functionalities) which is the easier way to go quicker in innovation. Research labs and scientists add new muscle models, but also improve the previous ones, create new actuators \dots \paragraph{}
+	Scientists from different horizons share and discuss about their work, during the project it was possible to speak with them to get information and explanation surrounding muscle models but also the way to code in C++ specific language. The OpenSim software is not simply to take charge of, however Stanford provided a huge user guide so the project could start without great difficulties.
+
+
+
+
+\section{The beginning of work}
+\paragraph{}
+The project started with a quick review of OpenSim software; evaluating the specific tools and trying to open  existing models to see how they worked were the first steps of the process. The idea was to be able to fully control and understand the software before entering into  details. After that, the previous models from OpenSim were searched. The link between the different models and what was understood from the state-of-the art was done. 
+
+\paragraph{} It appears that a lot of OpenSim models are improvements of the old Hill's model, it is easy to code because it is just a simple system of springs which imitates quite well the behavior of the muscle and the simulation can be executed really fast. However, the initial condition of the muscle are difficult, as shown previously in Hill's model, there are plenty of factors which are taken into account, furthermore in the simulation (and in real life) a muscle is always attached to a tendon which produce the contraction. Hence the modern models introduce precisely the role of the tendon in the simulation and its properties \cite{thelen_adjustment_2003}. The parameters were tested to see if there were linked to real data and also a huge work was done to understand what was the process from the mathematical model to the C++ code.\cite{noauthor_millard_nodate}\cite{noauthor_thelen_nodate}.
+I focused on the evolution of the work of Mr Millard team model \cite{millard_flexing_2013} which deals with the different tendon models in order to improve speed and fluidity in the simulation. The idea was to have a solid knowledge in order to quickly develop a study model and to apply it to the problem.
+\paragraph{} In a second time a research was made to see if there were any work done with OpenSim and Finite Element Methods. It is interesting to see that even if continuum mechanics provide the best description of the muscle, it is the rarest model for muscle simulation, and this is simply due to fact that the Finite Element Method which can be code through discretization requires a lot of computer resources, the calculus can quickly be tremendous and last for hours and sometimes days. However there are ways to optimize Finite Element Method approach to be quicker and more efficient \cite{blemker_three-dimensional_2005}. Nevertheless there are no FEM muscle models in OpenSim which pose another challenge, is the project going to implement in our work  a FEM muscle model.
+
+
+
+
+\chapter{Coding a muscle}
+
+In this chapter, we are going to see what was carried out, the process behind the work and the reflexion which has been made. The work restrains itself in a first time to a Hill's muscle model to see if it was possible to code and understand where could one possibly interfere in order to reproduce muscle spasticity.
+
+
+\section{Learning C++ language and OpenSim libraries} 
+
+\paragraph{} First of all, as a preparation the course of C++ provided by OpenClassroom was taken, this gave the key to understand how this language works and what should be searched first in a project developed by others. The idea was to have significant knowledge in the language in order to not be held back by a technical matter but to focus essentially on mechanical and and mathematical aspects.
+
+\paragraph{}
+It started with OpenSim tutorial, it was a real step-by-step procedure, each step was difficult to understand. The main difficulty is that heavy project from \textit{Visual Studio Community} is required, then if a test has to be run to see if the code is correct, it has to compile and the file created from the code must be read properly by the application OpenSim itself and it took a long time before reaching the end of the tutorial. However the tutorial describes a simple example \ref{OpEx} : 
+A block is attached to 2 muscles which are hooked to the ground. One muscle has a contraction and the idea is to see how far the block can get.
+\clearpage
+
+\begin{figure}[h!]
+\center 
+\includegraphics[scale = 0.3]{ImagesRapport/Exemple_simple.jpg}
+\caption{Screen shot of the OpenSim software}\label{OpEx}
+\end{figure}
+
+The tutorial gave the key to understand how could the program be modified in order to create a real simulation. Was discovered the way to make the bounds between muscle and bone, where to settle gravity, and more important the way to make a real analysis of the muscle.
+
+OpenSim is still for as far as the study went the right solution to create a muscle simulation because of the many libraries which can accessed. During, the project an analysis of what other had done in the field of study was conducted, even if the source codes were not always obtainable, the description provided by .osim and .vtp files gave the key to understand how the bones were simulated and how the muscle contraction was done.
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=2.5cm]{ImagesRapport/deadarm.PNG}
+\includegraphics[width=3cm]{ImagesRapport/walkingdead.PNG}
+\caption{Previous complete models from OpenSim}\label{deads}
+\end{center}
+\end{figure}
+
+It was now possible to develop a personal simulation, first based on Millard model of muscle \cite{noauthor_millard_nodate}, an extension of Hill's model far more complex.
+
+
+
+\section{Manipulating and studying an old simulation}
+\paragraph{}
+The first model was a simple block suspended between between two Millard's model muscle, the muscle had a maximal contraction length so it stopped after a movement. The goal was  to harness data in order to see the real evolution of the contraction during time. 
+
+The was a motivation to compare the model to what a spring could have done in the same experience, in example like this, the contraction is not as complex as in the body.
+It appears that when a muscle is exploited in a situation distant from the reality of its utilization, it extremely relevant to compare it to a simple system of springs.
+The first outcome was this: 
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[scale = 0.3]{ImagesRapport/Musclecontractio.png}
+\caption{Muscle length depending on altitude}
+\end{center}
+\end{figure}
+
+From the result, could be seen when the system would have limits, OpenSim reacts badly to collision, from that perspective, the real demonstrator could began to be created.
+
+
+\section{Adding new features to the old muscle model}
+\paragraph{}
+In a second time the project was to develop its own muscle model based on Hill's muscle model. The problem of Hill's model is to not take into account muscle's fatigue. Which makes it quite irrelevant in an exhaustive study. Following the work of K.Hainaut \cite{hainaut_muscle_1989} which explains in details the mechanism of fatigue in muscle behavior, from that, the study could draw important information which led to a mathematical model adapted to the situation. The study used the tool of OpenSim and guidelines \cite{noauthor_design_nodate} to create its own \textit{fatigable} model.
+
+The goal was to see a difference during a period of time between a model which would not have fatigue factors and my own model, the results seem to be acceptable :
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[scale = 0.5]{ImagesRapport/Musclefatigue.png}
+\caption{Muscle length depending on altitude}
+\end{center}
+\end{figure}
+
+And if we look closer we can see that the the length of the \textit{fatigable} muscle decrease faster than the normal muscle. After several tests,  the conclusion was that the model was actually working and it was a big first step in the comprehension of muscle's spasticity.
+\section{Making a simple arm with a controllable muscle}
+\paragraph{}
+The demonstrator is an arm composed of 2 bones (humerus and radius) connected by 3 different muscles with different characteristics, they represent respectively the biceps, the brachial and the triceps.The goal was to show at small scale how the system reacts to contraction in opposite direction and to see if the system fits with reality. The main difficulty was about the real anatomy of an arm. Indeed the contraction of the arm is due to several muscles and the major actors(biceps and triceps) are not directly connected to the humerus\cite{kapandji_physiologie_1966}. 
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[scale = 0.5]{ImagesRapport/Bras.jpg}
+\caption{Mechanical description of the arm \cite{kapandji_physiologie_1966}}
+\end{center}
+\end{figure}
+
+
+Furthermore the strength generated by the muscle was really lower than what was originally expected (the previous data was a strength of $1000 N$ for one muscle), accordingly the results were completely wrong because of the lack of knowledge in this field. 
+\paragraph{}
+After several adjustments, the study  came up with decent result and a simulation far closer to reality than before\ref{armdone}.
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[scale = 0.5]{ImagesRapport/armdone.PNG}
+\caption{Screen shot of the demonstrator : an arm with 3 muscles contracting, 1 degree of freedom in rotation}\label{armdone}
+\end{center}
+\end{figure}
+\paragraph{}
+The arm fully simulated responded to the criteria established, however the arm was not over, the final goal was to simulate the phenomenon of muscle spasticity.
+To do so, the code had to find a way to bring to light the contraction muscle's velocity. Thanks to that it could easily order a muscle to have its length totally blocked. This would be a good way to simulate the spasticity. However it is a fake spasticity because , the code does not enter into the muscle program, it just focuses on the simulated preview, it works but it is not integrated in the muscle model.
+
+\section{Development of manual for the future of the project}
+\paragraph{}
+The project was at real small scale, conducted by a single student at a basic level. However it can rapidly be a significant work if it is properly managed, with this in mind, we can assume that the project was bootstrap, a small manual was developed \ref{Manual} in french which one will continue to supplement in order to help the next workers and interns on the project.
+The manual explains the process to create a project in OpenSim, explains where there can be problems and how to avoid them. 
+\paragraph{}
+Also, it is possible that I will be working on this project again, it is a track I could re-use. Indeed, the user's guide of OpenSim is far too rich, even if it details almost everything, it is easy to be lost and the fact that is  just in English can be sometime a restraint to work. Furthermore the manual will permit others to advance quicker in their task, the main idea is that I will not be required if someone else wants to work on this software (even if I am conscious that my work was not tremendous at all).
+
+
+
+
+
+
+
+
+\chapter{Critical review}
+\section{The Finite Element Method put aside}
+\paragraph{}
+During this project, the study focused on the simulation of the muscle, the model was an improvement of Hill’s initial model. The study did not make the link between continuum mechanics through finite element method and the simulation in OpenSim. Was not known what was the algorithm giving the possibility to implant a code in the software, it appeared to be the main difficulty. Furthermore, the understanding of the finite element methods was not good enough to fully apprehend the problem.
+There were not enough knowledge in this new field of research to make a simulation based on those methods, and it was not in fact necessarily because the main goal was to have a simulation good enough to properly respond to the problem. The case of spasticity of muscle could be simulated with accuracy with the model developed. According to Mr Saint-Bauzel, the simulation with FEM was not needed, indeed, continuum mechanics can serve when you have to study the variation of volumes and analyze with precision the transformations endured during a contraction.
+The final aspect which restrained me was the time of process. In fact the simulation using FEM \cite{blemker_fast_2005} can take several hours and sometimes days. The access to facilities which were capable to endure such data treatments were not granted.  It would have been interesting to possess a FEM model and compare it with the model developed to see where the difference would have been.
+
+
+
+
+
+\section{Model developed during the project}
+
+The model created during the internship is working but relies on a muscle model from 1930s, it is reliable in terms of efficiency but it does not integrate the volume variations which could be very interesting in the study of spasticity for many reasons. First of all, as one knows the spasticity phenomenon is the consequence of a too high speed of contraction, the contraction means a tissue swelling, hence it would be interesting to add volume variations. In addition to that, the study of the volume variations could make a more precise analyze of the muscle strength and we could see in details the distribution of efforts in the muscle.   
+
+
+
+
+
+
+
+
+
+\section{The link with the exoskeleton}
+\paragraph{}
+The project was supposed to be the beginning of a reflection which could lead to a real important initiative. Indeed after a while and with further development, the model with spasticity could have been integrated to exoskeleton devices in order to help the one who needed it. However, there were not enough time to continue the simulation in this idea. In fact, it would have been better to change to a leg demonstrator sooner, but it was not possible to do so. From this perspective it could have been even more exciting because of the proximity to reality. Furthermore, during the project, Mr Saint-Bauzel received a refusal of investment from the ANR (Agence nationale de la recherche).
+If the project goes on, it will be with private funds and maybe the models developed by the lab could be tested and implemented in companies' exoskeleton, such as \textit{Wandercraft} ones (their headquarters are located in Paris).
+
+
+
+
+
+
+
+
+
+
+\section{My learnings}
+\paragraph{}
+This project was a real enlightenment concerning research. During a period of almost 5 month, I could do almost everything I wanted to do, the huge work of research was something completely new: reading, defining, learning and analyzing a total new branch of study. Every courses I had during the semester could be linked to what I was working on, from (of course) continuum mechanics to Fourier and Laplace’s transforms. It was the most enriching experience in terms of learning and understanding. Furthermore, I develop my skill in coding; I could finally understand how we pass from mathematical abstraction to a simulation close to reality. 
+I also develop knowledge in anatomy; I faced at many times problems and bugs which were essentially due to my lack of knowledge in this field. It even changed my mind concerning my master orientation, indeed it will be necessarily to have courses in anatomy and biology if I want to be more efficient in my work.
+
+\chapter{Conclusion}
+\paragraph{}
+To conclude, this small survey was a starter for a huge work of research, the project gives the basic knowledge to understand muscle models and gives the reader the possibility to go to more complete and higher-quality reports and articles. Furthermore, the study introduces OpenSim software, which is a complete tool in order to study and work on human motion or musculo-skeletal system. The development of the spasticity model is something new to OpenSim as far as the researches were done. 
+However the project was not a complete success, during the period of internship, the link between the continuum mechanics and the simulation was not established, furthermore the demonstrator was finally an arm with one degree of freedom which is not really representative of the reality.
+\paragraph{}
+On a personal matter, this internship was really instructive on many different aspects.
+First of all, the project gave me the possibility to enter into a complete new field of study which was totally unknown from my perspective. Furthermore, the learning of a new software and a new computer language was something really enlightening. Finally the internship showed me the reflection process which transform mathematical and mechanical equations into a concrete simulation close to reality. 
+Even if the project was not a complete success I did learn so many things that I consider the internship as an achievement.
+The wish that could be made is that the project has an interest and the survey could be used even as an introduction to the subject for further development.
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%
+\addcontentsline{toc}{chapter}{Bibliography}
+\printbibliography
+
+
+%%%%%%%%%%%%%%%%%%%%
+
+\appendix
+
+
+\chapter{Technicalities}
+\begin{itemize}
+\item Actuator : 
+\item vtp file :
+\item osim file :
+\item spasticity :
+\end{itemize}
+\chapter{Planning}
+\label{Planning}
+\includepdf{ImagesRapport/Diagramme-de-Gantt-sur-Excel-v2.pdf}
+\chapter{Manual}
+\label{Manual}
+\includepdf{ImagesRapport/NoticeexplicativeOpenSim_v_1_1.pdf}
+
+
+
+
+\begin{center}
+
+\begin{longtable}{m{2cm}m{2cm}m{6cm}m{2cm}} %m: centré au milieu verticalement
+
+%%%%titres des colonnes
+
+\hline
+
+
+
+\hline \hline
+
+\endfirsthead
+
+
+\hline
+
+
+\hline \hline
+
+\endhead
+
+
+
+\endfoot
+
+
+
+\endlastfoot
+
+
+\rowcolor{lightgray}
+
+
+
+\rowcolor{lightgray}
+
+
+
+
+
+\rowcolor{lightgray}
+
+
+
+\rowcolor{lightgray}
+
+
+
+
+\rowcolor{lightgray}
+
+
+
+
+\end{longtable}
+
+\end{center}
+
+
+
+
+
+
+\end{document}

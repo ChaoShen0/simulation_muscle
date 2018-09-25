@@ -1,0 +1,10 @@
+﻿La génération a démarré 13/10/2017 22:49:53.
+     1>Projet "C:\Users\Tristan\Desktop\OpenWork1\ExampleMain\build\ALL_BUILD.vcxproj" sur le nœud 2 (Build cible(s)).
+     1>CustomBuild:
+         Building Custom Rule C:/Users/Tristan/Desktop/OpenWork1/ExampleMain/CMakeLists.txt
+         CMake does not need to re-run because C:/Users/Tristan/Desktop/OpenWork1/ExampleMain/build/CMakeFiles/generate.stamp is up-to-date.
+     1>Génération du projet "C:\Users\Tristan\Desktop\OpenWork1\ExampleMain\build\ALL_BUILD.vcxproj" terminée (Build cible(s)).
+
+La génération a réussi.
+
+Temps écoulé 00:00:00.11

@@ -1,0 +1,40 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ALL_BUILD", "ALL_BUILD.vcxproj", "{2CB2DC73-A38D-31C8-AE74-6DE8786D37EC}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C3ADA069-77AD-3A6A-B5E2-55550B25885F} = {C3ADA069-77AD-3A6A-B5E2-55550B25885F}
+		{6C122FC2-3F43-3A61-AC78-753F52FB1889} = {6C122FC2-3F43-3A61-AC78-753F52FB1889}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ZERO_CHECK", "ZERO_CHECK.vcxproj", "{C3ADA069-77AD-3A6A-B5E2-55550B25885F}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "exampleMain", "exampleMain.vcxproj", "{6C122FC2-3F43-3A61-AC78-753F52FB1889}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C3ADA069-77AD-3A6A-B5E2-55550B25885F} = {C3ADA069-77AD-3A6A-B5E2-55550B25885F}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		RelWithDebInfo|x64 = RelWithDebInfo|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2CB2DC73-A38D-31C8-AE74-6DE8786D37EC}.RelWithDebInfo|x64.ActiveCfg = RelWithDebInfo|x64
+		{2CB2DC73-A38D-31C8-AE74-6DE8786D37EC}.Release|x64.ActiveCfg = Release|x64
+		{C3ADA069-77AD-3A6A-B5E2-55550B25885F}.RelWithDebInfo|x64.ActiveCfg = RelWithDebInfo|x64
+		{C3ADA069-77AD-3A6A-B5E2-55550B25885F}.RelWithDebInfo|x64.Build.0 = RelWithDebInfo|x64
+		{C3ADA069-77AD-3A6A-B5E2-55550B25885F}.Release|x64.ActiveCfg = Release|x64
+		{C3ADA069-77AD-3A6A-B5E2-55550B25885F}.Release|x64.Build.0 = Release|x64
+		{6C122FC2-3F43-3A61-AC78-753F52FB1889}.RelWithDebInfo|x64.ActiveCfg = RelWithDebInfo|x64
+		{6C122FC2-3F43-3A61-AC78-753F52FB1889}.RelWithDebInfo|x64.Build.0 = RelWithDebInfo|x64
+		{6C122FC2-3F43-3A61-AC78-753F52FB1889}.Release|x64.ActiveCfg = Release|x64
+		{6C122FC2-3F43-3A61-AC78-753F52FB1889}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {17F03542-B2BF-3844-A3D7-3E20C1FA1C80}
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

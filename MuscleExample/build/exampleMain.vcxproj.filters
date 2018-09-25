@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\Tristan\Desktop\OpenWork1\MuscleExample\FatigableMuscle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Tristan\Desktop\OpenWork1\MuscleExample\mainFatigue.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\Tristan\Desktop\OpenWork1\MuscleExample\FatigableMuscle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Tristan\Desktop\OpenWork1\MuscleExample\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4280CE19-1D74-315D-834E-7288FD5D4906}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{82FC2D0C-F1FF-38E4-A166-75EFE6728D46}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

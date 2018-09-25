@@ -1,0 +1,109 @@
+Loaded model arm26_optimize from file Arm26_Optimize.osim
+
+objective evaluation #: 2  controls = ~[0.01 0.01 0.01 0.99 0.99 0.99] bestSoFar = -3.7347
+
+objective evaluation #: 3  controls = ~[0.0100027 0.01 0.01 0.99 0.99 0.99] bestSoFar = -3.73486
+
+objective evaluation #: 10  controls = ~[0.01 0.01 0.01 0.989973 0.99 0.99] bestSoFar = -3.73492
+
+objective evaluation #: 71  controls = ~[0.0132082 0.0132082 0.0132082 0.986792 0.99 0.99] bestSoFar = -4.23751
+
+objective evaluation #: 73  controls = ~[0.0132109 0.0132082 0.0132082 0.986792 0.99 0.99] bestSoFar = -4.23773
+
+objective evaluation #: 80  controls = ~[0.0132082 0.0132082 0.0132082 0.986765 0.99 0.99] bestSoFar = -4.23783
+
+objective evaluation #: 85  controls = ~[0.0160398 0.0160398 0.0160398 0.98396 0.99 0.99] bestSoFar = -4.9502
+
+objective evaluation #: 87  controls = ~[0.0160425 0.0160398 0.0160398 0.98396 0.99 0.99] bestSoFar = -4.95064
+
+objective evaluation #: 94  controls = ~[0.0160398 0.0160398 0.0160398 0.983933 0.99 0.99] bestSoFar = -4.95083
+
+objective evaluation #: 113  controls = ~[0.0171355 0.0171355 0.0171355 0.982864 0.99 0.99] bestSoFar = -5.48778
+
+objective evaluation #: 116  controls = ~[0.0171328 0.0171355 0.0171355 0.982864 0.99 0.99] bestSoFar = -5.48919
+
+objective evaluation #: 121  controls = ~[0.0171355 0.0171355 0.0171355 0.982891 0.99 0.99] bestSoFar = -5.48979
+
+objective evaluation #: 225  controls = ~[0.017105 0.0171069 0.0171069 0.982892 0.99 0.99] bestSoFar = -5.50219
+
+objective evaluation #: 227  controls = ~[0.0171077 0.0171069 0.0171069 0.982892 0.99 0.99] bestSoFar = -5.50221
+
+objective evaluation #: 235  controls = ~[0.017105 0.0171069 0.0171069 0.982892 0.990027 0.99] bestSoFar = -5.50223
+
+objective evaluation #: 249  controls = ~[0.0171057 0.0171077 0.0171077 0.982892 0.990027 0.99] bestSoFar = -5.50224
+
+objective evaluation #: 263  controls = ~[0.0171061 0.0171084 0.0171084 0.982891 0.990027 0.99] bestSoFar = -5.50225
+
+objective evaluation #: 291  controls = ~[0.0171052 0.0171093 0.0171091 0.982892 0.990027 0.99] bestSoFar = -5.50225
+
+objective evaluation #: 305  controls = ~[0.0171024 0.0171122 0.0171112 0.982893 0.990027 0.99] bestSoFar = -5.50225
+
+objective evaluation #: 319  controls = ~[0.017091 0.0171237 0.0171195 0.982899 0.990027 0.99] bestSoFar = -5.50228
+
+objective evaluation #: 323  controls = ~[0.0169555 0.0172656 0.0172217 0.982968 0.99 0.99] bestSoFar = -5.50248
+
+objective evaluation #: 325  controls = ~[0.0169582 0.0172656 0.0172217 0.982968 0.99 0.99] bestSoFar = -5.50254
+
+objective evaluation #: 332  controls = ~[0.0169555 0.0172656 0.0172217 0.982941 0.99 0.99] bestSoFar = -5.50256
+
+objective evaluation #: 335  controls = ~[0.0169555 0.0172656 0.0172217 0.982968 0.99 0.990027] bestSoFar = -5.50256
+
+objective evaluation #: 337  controls = ~[0.0166123 0.0176302 0.0174851 0.98314 0.99 0.99] bestSoFar = -5.50286
+
+objective evaluation #: 339  controls = ~[0.016615 0.0176302 0.0174851 0.98314 0.99 0.99] bestSoFar = -5.50303
+
+objective evaluation #: 346  controls = ~[0.0166123 0.0176302 0.0174851 0.983114 0.99 0.99] bestSoFar = -5.50309
+
+objective evaluation #: 351  controls = ~[0.0163545 0.0179092 0.0176872 0.983269 0.99 0.99] bestSoFar = -5.50334
+
+objective evaluation #: 353  controls = ~[0.0163572 0.0179092 0.0176872 0.983269 0.99 0.99] bestSoFar = -5.50353
+
+objective evaluation #: 360  controls = ~[0.0163545 0.0179092 0.0176872 0.983242 0.99 0.99] bestSoFar = -5.5036
+
+objective evaluation #: 365  controls = ~[0.0153235 0.0190249 0.0184954 0.983785 0.99 0.99] bestSoFar = -5.50421
+
+objective evaluation #: 367  controls = ~[0.0153262 0.0190249 0.0184954 0.983785 0.99 0.99] bestSoFar = -5.50455
+
+objective evaluation #: 374  controls = ~[0.0153235 0.0190249 0.0184954 0.983758 0.99 0.99] bestSoFar = -5.50468
+
+objective evaluation #: 379  controls = ~[0.0150313 0.0193556 0.0187364 0.983928 0.99 0.99] bestSoFar = -5.50594
+
+objective evaluation #: 381  controls = ~[0.015034 0.0193556 0.0187364 0.983928 0.99 0.99] bestSoFar = -5.50621
+
+objective evaluation #: 388  controls = ~[0.0150313 0.0193556 0.0187364 0.983902 0.99 0.99] bestSoFar = -5.5063
+
+objective evaluation #: 393  controls = ~[0.0129767 0.02165 0.0204057 0.984944 0.99 0.99] bestSoFar = -5.51107
+
+objective evaluation #: 395  controls = ~[0.0129794 0.02165 0.0204057 0.984944 0.99 0.99] bestSoFar = -5.51133
+
+objective evaluation #: 402  controls = ~[0.0129767 0.02165 0.0204057 0.984918 0.99 0.99] bestSoFar = -5.51142
+
+objective evaluation #: 407  controls = ~[0.0107323 0.0241889 0.0223431 0.98613 0.99 0.99] bestSoFar = -5.51758
+
+objective evaluation #: 409  controls = ~[0.010735 0.0241889 0.0223431 0.98613 0.99 0.99] bestSoFar = -5.5177
+
+objective evaluation #: 416  controls = ~[0.0107323 0.0241889 0.0223431 0.986103 0.99 0.99] bestSoFar = -5.51773
+
+objective evaluation #: 421  controls = ~[0.01 0.0250442 0.023004 0.986527 0.99 0.99] bestSoFar = -5.51947
+
+objective evaluation #: 426  controls = ~[0.01 0.0250415 0.023004 0.986527 0.99 0.99] bestSoFar = -5.51953
+
+objective evaluation #: 429  controls = ~[0.01 0.0250442 0.023004 0.986554 0.99 0.99] bestSoFar = -5.51961
+
+objective evaluation #: 451  controls = ~[0.0100027 0.0250356 0.0229874 0.98652 0.99 0.99] bestSoFar = -5.51963
+
+objective evaluation #: 459  controls = ~[0.01 0.0250356 0.0229874 0.98652 0.990027 0.99] bestSoFar = -5.51964
+
+objective evaluation #: 461  controls = ~[0.01 0.0250356 0.0229874 0.98652 0.99 0.990027] bestSoFar = -5.51964
+
+objective evaluation #: 473  controls = ~[0.01 0.025039 0.0229904 0.98652 0.990027 0.99] bestSoFar = -5.51967
+Elapsed time = 125s
+TRIlong control value = 0.01
+TRIlat control value = 0.0250395
+TRImed control value = 0.0229912
+BIClong control value = 0.986521
+BICshort control value = 0.99
+BRA control value = 0.99
+
+Maximum hand velocity = 5.51964m/s
+OpenSim example completed successfully.

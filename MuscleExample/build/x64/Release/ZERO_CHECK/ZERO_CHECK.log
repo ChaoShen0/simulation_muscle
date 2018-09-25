@@ -1,0 +1,10 @@
+﻿La génération a démarré 24/11/2017 17:41:57.
+     1>Projet "C:\Users\Tristan\Desktop\OpenWork1\MuscleExample\build\ZERO_CHECK.vcxproj" sur le nœud 2 (Build cible(s)).
+     1>CustomBuild:
+         Checking Build System
+         CMake does not need to re-run because C:/Users/Tristan/Desktop/OpenWork1/MuscleExample/build/CMakeFiles/generate.stamp is up-to-date.
+     1>Génération du projet "C:\Users\Tristan\Desktop\OpenWork1\MuscleExample\build\ZERO_CHECK.vcxproj" terminée (Build cible(s)).
+
+La génération a réussi.
+
+Temps écoulé 00:00:00.38

@@ -1,0 +1,345 @@
+The system is: Windows - 10.0.15063 - AMD64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler:  
+Build flags: 
+Id flags:  
+
+The output was:
+0
+Microsoft (R) Build Engine, version 12.0.30501.0
+[Microsoft .NET Framework, Version 4.0.30319.42000]
+Copyright (C) Microsoft Corporation. Tous droits r�serv�s.
+
+La g�n�ration a d�marr� 30/10/2017 10:38:34.
+Projet "C:\Users\Tristan\Desktop\OpenWork1\OptimizationExample_Arm26\build\CMakeFiles\3.10.0-rc2\CompilerIdC\CompilerIdC.vcxproj" sur le noud 1 (cibles par d�faut).
+PrepareForBuild:
+  Cr�ation du r�pertoire "Debug\".
+  Cr�ation du r�pertoire "Debug\CompilerIdC.tlog\".
+InitializeBuildStatus:
+  Cr�ation de "Debug\CompilerIdC.tlog\unsuccessfulbuild", car "AlwaysCreate" a �t� sp�cifi�.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /nologo /W0 /WX- /Od /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TC /errorReport:queue CMakeCCompilerId.c
+  CMakeCCompilerId.c
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:QUEUE /OUT:".\CompilerIdC.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\CompilerIdC.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\CompilerIdC.lib" /MACHINE:X64 Debug\CMakeCCompilerId.obj
+  CompilerIdC.vcxproj -> C:\Users\Tristan\Desktop\OpenWork1\OptimizationExample_Arm26\build\CMakeFiles\3.10.0-rc2\CompilerIdC\.\CompilerIdC.exe
+PostBuildEvent:
+  for %%i in (cl.exe) do @echo CMAKE_C_COMPILER=%%~$PATH:i
+  :VCEnd
+  CMAKE_C_COMPILER=C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\cl.exe
+FinalizeBuildStatus:
+  Suppression du fichier "Debug\CompilerIdC.tlog\unsuccessfulbuild".
+  Mise � jour de l'horodatage "Debug\CompilerIdC.tlog\CompilerIdC.lastbuildstate".
+G�n�ration du projet "C:\Users\Tristan\Desktop\OpenWork1\OptimizationExample_Arm26\build\CMakeFiles\3.10.0-rc2\CompilerIdC\CompilerIdC.vcxproj" termin�e (cibles par d�faut).
+
+La g�n�ration a r�ussi.
+    0 Avertissement(s)
+    0 Erreur(s)
+
+Temps �coul� 00:00:00.96
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.vcxproj"
+
+The C compiler identification is MSVC, found in "C:/Users/Tristan/Desktop/OpenWork1/OptimizationExample_Arm26/build/CMakeFiles/3.10.0-rc2/CompilerIdC/CompilerIdC.exe"
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler:  
+Build flags: 
+Id flags:  
+
+The output was:
+0
+Microsoft (R) Build Engine, version 12.0.30501.0
+[Microsoft .NET Framework, Version 4.0.30319.42000]
+Copyright (C) Microsoft Corporation. Tous droits r�serv�s.
+
+La g�n�ration a d�marr� 30/10/2017 10:38:35.
+Projet "C:\Users\Tristan\Desktop\OpenWork1\OptimizationExample_Arm26\build\CMakeFiles\3.10.0-rc2\CompilerIdCXX\CompilerIdCXX.vcxproj" sur le noud 1 (cibles par d�faut).
+PrepareForBuild:
+  Cr�ation du r�pertoire "Debug\".
+  Cr�ation du r�pertoire "Debug\CompilerIdCXX.tlog\".
+InitializeBuildStatus:
+  Cr�ation de "Debug\CompilerIdCXX.tlog\unsuccessfulbuild", car "AlwaysCreate" a �t� sp�cifi�.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /nologo /W0 /WX- /Od /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /errorReport:queue CMakeCXXCompilerId.cpp
+  CMakeCXXCompilerId.cpp
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:QUEUE /OUT:".\CompilerIdCXX.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\CompilerIdCXX.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\CompilerIdCXX.lib" /MACHINE:X64 Debug\CMakeCXXCompilerId.obj
+  CompilerIdCXX.vcxproj -> C:\Users\Tristan\Desktop\OpenWork1\OptimizationExample_Arm26\build\CMakeFiles\3.10.0-rc2\CompilerIdCXX\.\CompilerIdCXX.exe
+PostBuildEvent:
+  for %%i in (cl.exe) do @echo CMAKE_CXX_COMPILER=%%~$PATH:i
+  :VCEnd
+  CMAKE_CXX_COMPILER=C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\cl.exe
+FinalizeBuildStatus:
+  Suppression du fichier "Debug\CompilerIdCXX.tlog\unsuccessfulbuild".
+  Mise � jour de l'horodatage "Debug\CompilerIdCXX.tlog\CompilerIdCXX.lastbuildstate".
+G�n�ration du projet "C:\Users\Tristan\Desktop\OpenWork1\OptimizationExample_Arm26\build\CMakeFiles\3.10.0-rc2\CompilerIdCXX\CompilerIdCXX.vcxproj" termin�e (cibles par d�faut).
+
+La g�n�ration a r�ussi.
+    0 Avertissement(s)
+    0 Erreur(s)
+
+Temps �coul� 00:00:00.64
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.vcxproj"
+
+The CXX compiler identification is MSVC, found in "C:/Users/Tristan/Desktop/OpenWork1/OptimizationExample_Arm26/build/CMakeFiles/3.10.0-rc2/CompilerIdCXX/CompilerIdCXX.exe"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: C:/Users/Tristan/Desktop/OpenWork1/OptimizationExample_Arm26/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/12.0/bin/MSBuild.exe" "cmTC_0ab03.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=12.0"
+Microsoft (R) Build Engine, version 12.0.30501.0
+[Microsoft .NET Framework, Version 4.0.30319.42000]
+Copyright (C) Microsoft Corporation. Tous droits r‚serv‚s.
+
+La g‚n‚ration a d‚marr‚ 30/10/2017 10:38:37.
+Projet "C:\Users\Tristan\Desktop\OpenWork1\OptimizationExample_Arm26\build\CMakeFiles\CMakeTmp\cmTC_0ab03.vcxproj" sur le noud 1 (cibles par d‚faut).
+PrepareForBuild:
+  Cr‚ation du r‚pertoire "cmTC_0ab03.dir\Debug\".
+  Cr‚ation du r‚pertoire "C:\Users\Tristan\Desktop\OpenWork1\OptimizationExample_Arm26\build\CMakeFiles\CMakeTmp\Debug\".
+  Cr‚ation du r‚pertoire "cmTC_0ab03.dir\Debug\cmTC_0ab03.tlog\".
+InitializeBuildStatus:
+  Cr‚ation de "cmTC_0ab03.dir\Debug\cmTC_0ab03.tlog\unsuccessfulbuild", car "AlwaysCreate" a ‚t‚ sp‚cifi‚.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"cmTC_0ab03.dir\Debug\\" /Fd"cmTC_0ab03.dir\Debug\vc120.pdb" /Gd /TC /errorReport:queue C:\Users\Tristan\Desktop\OpenWork1\OptimizationExample_Arm26\build\CMakeFiles\CMakeTmp\testCCompiler.c
+  Compilateur d'optimisation Microsoft (R) C/C++ versionÿ18.00.30501 pour x64
+  Copyright (C) Microsoft Corporation. Tous droits r‚serv‚s.
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"cmTC_0ab03.dir\Debug\\" /Fd"cmTC_0ab03.dir\Debug\vc120.pdb" /Gd /TC /errorReport:queue C:\Users\Tristan\Desktop\OpenWork1\OptimizationExample_Arm26\build\CMakeFiles\CMakeTmp\testCCompiler.c
+  
+  testCCompiler.c
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\Tristan\Desktop\OpenWork1\OptimizationExample_Arm26\build\CMakeFiles\CMakeTmp\Debug\cmTC_0ab03.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/Tristan/Desktop/OpenWork1/OptimizationExample_Arm26/build/CMakeFiles/CMakeTmp/Debug/cmTC_0ab03.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/Tristan/Desktop/OpenWork1/OptimizationExample_Arm26/build/CMakeFiles/CMakeTmp/Debug/cmTC_0ab03.lib" /MACHINE:X64  /machine:x64 cmTC_0ab03.dir\Debug\testCCompiler.obj
+  cmTC_0ab03.vcxproj -> C:\Users\Tristan\Desktop\OpenWork1\OptimizationExample_Arm26\build\CMakeFiles\CMakeTmp\Debug\cmTC_0ab03.exe
+FinalizeBuildStatus:
+  Suppression du fichier "cmTC_0ab03.dir\Debug\cmTC_0ab03.tlog\unsuccessfulbuild".
+  Mise … jour de l'horodatage "cmTC_0ab03.dir\Debug\cmTC_0ab03.tlog\cmTC_0ab03.lastbuildstate".
+G‚n‚ration du projet "C:\Users\Tristan\Desktop\OpenWork1\OptimizationExample_Arm26\build\CMakeFiles\CMakeTmp\cmTC_0ab03.vcxproj" termin‚e (cibles par d‚faut).
+
+La g‚n‚ration a r‚ussi.
+    0 Avertissement(s)
+    0 Erreur(s)
+
+Temps ‚coul‚ 00:00:01.16
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: C:/Users/Tristan/Desktop/OpenWork1/OptimizationExample_Arm26/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/12.0/bin/MSBuild.exe" "cmTC_e8635.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=12.0"
+Microsoft (R) Build Engine, version 12.0.30501.0
+[Microsoft .NET Framework, Version 4.0.30319.42000]
+Copyright (C) Microsoft Corporation. Tous droits r‚serv‚s.
+
+La g‚n‚ration a d‚marr‚ 30/10/2017 10:38:38.
+Projet "C:\Users\Tristan\Desktop\OpenWork1\OptimizationExample_Arm26\build\CMakeFiles\CMakeTmp\cmTC_e8635.vcxproj" sur le noud 1 (cibles par d‚faut).
+PrepareForBuild:
+  Cr‚ation du r‚pertoire "cmTC_e8635.dir\Debug\".
+  Cr‚ation du r‚pertoire "C:\Users\Tristan\Desktop\OpenWork1\OptimizationExample_Arm26\build\CMakeFiles\CMakeTmp\Debug\".
+  Cr‚ation du r‚pertoire "cmTC_e8635.dir\Debug\cmTC_e8635.tlog\".
+InitializeBuildStatus:
+  Cr‚ation de "cmTC_e8635.dir\Debug\cmTC_e8635.tlog\unsuccessfulbuild", car "AlwaysCreate" a ‚t‚ sp‚cifi‚.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"cmTC_e8635.dir\Debug\\" /Fd"cmTC_e8635.dir\Debug\vc120.pdb" /Gd /TC /errorReport:queue "C:\Program Files\CMake\share\cmake-3.10\Modules\CMakeCCompilerABI.c"
+  Compilateur d'optimisation Microsoft (R) C/C++ versionÿ18.00.30501 pour x64
+  Copyright (C) Microsoft Corporation. Tous droits r‚serv‚s.
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"cmTC_e8635.dir\Debug\\" /Fd"cmTC_e8635.dir\Debug\vc120.pdb" /Gd /TC /errorReport:queue "C:\Program Files\CMake\share\cmake-3.10\Modules\CMakeCCompilerABI.c"
+  
+  CMakeCCompilerABI.c
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\Tristan\Desktop\OpenWork1\OptimizationExample_Arm26\build\CMakeFiles\CMakeTmp\Debug\cmTC_e8635.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/Tristan/Desktop/OpenWork1/OptimizationExample_Arm26/build/CMakeFiles/CMakeTmp/Debug/cmTC_e8635.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/Tristan/Desktop/OpenWork1/OptimizationExample_Arm26/build/CMakeFiles/CMakeTmp/Debug/cmTC_e8635.lib" /MACHINE:X64  /machine:x64 cmTC_e8635.dir\Debug\CMakeCCompilerABI.obj
+  cmTC_e8635.vcxproj -> C:\Users\Tristan\Desktop\OpenWork1\OptimizationExample_Arm26\build\CMakeFiles\CMakeTmp\Debug\cmTC_e8635.exe
+FinalizeBuildStatus:
+  Suppression du fichier "cmTC_e8635.dir\Debug\cmTC_e8635.tlog\unsuccessfulbuild".
+  Mise … jour de l'horodatage "cmTC_e8635.dir\Debug\cmTC_e8635.tlog\cmTC_e8635.lastbuildstate".
+G‚n‚ration du projet "C:\Users\Tristan\Desktop\OpenWork1\OptimizationExample_Arm26\build\CMakeFiles\CMakeTmp\cmTC_e8635.vcxproj" termin‚e (cibles par d‚faut).
+
+La g‚n‚ration a r‚ussi.
+    0 Avertissement(s)
+    0 Erreur(s)
+
+Temps ‚coul‚ 00:00:00.71
+
+
+Determining if the CXX compiler works passed with the following output:
+Change Dir: C:/Users/Tristan/Desktop/OpenWork1/OptimizationExample_Arm26/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/12.0/bin/MSBuild.exe" "cmTC_46d36.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=12.0"
+Microsoft (R) Build Engine, version 12.0.30501.0
+[Microsoft .NET Framework, Version 4.0.30319.42000]
+Copyright (C) Microsoft Corporation. Tous droits r‚serv‚s.
+
+La g‚n‚ration a d‚marr‚ 30/10/2017 10:38:39.
+Projet "C:\Users\Tristan\Desktop\OpenWork1\OptimizationExample_Arm26\build\CMakeFiles\CMakeTmp\cmTC_46d36.vcxproj" sur le noud 1 (cibles par d‚faut).
+PrepareForBuild:
+  Cr‚ation du r‚pertoire "cmTC_46d36.dir\Debug\".
+  Cr‚ation du r‚pertoire "C:\Users\Tristan\Desktop\OpenWork1\OptimizationExample_Arm26\build\CMakeFiles\CMakeTmp\Debug\".
+  Cr‚ation du r‚pertoire "cmTC_46d36.dir\Debug\cmTC_46d36.tlog\".
+InitializeBuildStatus:
+  Cr‚ation de "cmTC_46d36.dir\Debug\cmTC_46d36.tlog\unsuccessfulbuild", car "AlwaysCreate" a ‚t‚ sp‚cifi‚.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /GR /Fo"cmTC_46d36.dir\Debug\\" /Fd"cmTC_46d36.dir\Debug\vc120.pdb" /Gd /TP /errorReport:queue C:\Users\Tristan\Desktop\OpenWork1\OptimizationExample_Arm26\build\CMakeFiles\CMakeTmp\testCXXCompiler.cxx
+  Compilateur d'optimisation Microsoft (R) C/C++ versionÿ18.00.30501 pour x64
+  Copyright (C) Microsoft Corporation. Tous droits r‚serv‚s.
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /GR /Fo"cmTC_46d36.dir\Debug\\" /Fd"cmTC_46d36.dir\Debug\vc120.pdb" /Gd /TP /errorReport:queue C:\Users\Tristan\Desktop\OpenWork1\OptimizationExample_Arm26\build\CMakeFiles\CMakeTmp\testCXXCompiler.cxx
+  
+  testCXXCompiler.cxx
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\Tristan\Desktop\OpenWork1\OptimizationExample_Arm26\build\CMakeFiles\CMakeTmp\Debug\cmTC_46d36.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/Tristan/Desktop/OpenWork1/OptimizationExample_Arm26/build/CMakeFiles/CMakeTmp/Debug/cmTC_46d36.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/Tristan/Desktop/OpenWork1/OptimizationExample_Arm26/build/CMakeFiles/CMakeTmp/Debug/cmTC_46d36.lib" /MACHINE:X64  /machine:x64 cmTC_46d36.dir\Debug\testCXXCompiler.obj
+  cmTC_46d36.vcxproj -> C:\Users\Tristan\Desktop\OpenWork1\OptimizationExample_Arm26\build\CMakeFiles\CMakeTmp\Debug\cmTC_46d36.exe
+FinalizeBuildStatus:
+  Suppression du fichier "cmTC_46d36.dir\Debug\cmTC_46d36.tlog\unsuccessfulbuild".
+  Mise … jour de l'horodatage "cmTC_46d36.dir\Debug\cmTC_46d36.tlog\cmTC_46d36.lastbuildstate".
+G‚n‚ration du projet "C:\Users\Tristan\Desktop\OpenWork1\OptimizationExample_Arm26\build\CMakeFiles\CMakeTmp\cmTC_46d36.vcxproj" termin‚e (cibles par d‚faut).
+
+La g‚n‚ration a r‚ussi.
+    0 Avertissement(s)
+    0 Erreur(s)
+
+Temps ‚coul‚ 00:00:00.70
+
+
+Detecting CXX compiler ABI info compiled with the following output:
+Change Dir: C:/Users/Tristan/Desktop/OpenWork1/OptimizationExample_Arm26/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/12.0/bin/MSBuild.exe" "cmTC_18b81.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=12.0"
+Microsoft (R) Build Engine, version 12.0.30501.0
+[Microsoft .NET Framework, Version 4.0.30319.42000]
+Copyright (C) Microsoft Corporation. Tous droits r‚serv‚s.
+
+La g‚n‚ration a d‚marr‚ 30/10/2017 10:38:40.
+Projet "C:\Users\Tristan\Desktop\OpenWork1\OptimizationExample_Arm26\build\CMakeFiles\CMakeTmp\cmTC_18b81.vcxproj" sur le noud 1 (cibles par d‚faut).
+PrepareForBuild:
+  Cr‚ation du r‚pertoire "cmTC_18b81.dir\Debug\".
+  Cr‚ation du r‚pertoire "C:\Users\Tristan\Desktop\OpenWork1\OptimizationExample_Arm26\build\CMakeFiles\CMakeTmp\Debug\".
+  Cr‚ation du r‚pertoire "cmTC_18b81.dir\Debug\cmTC_18b81.tlog\".
+InitializeBuildStatus:
+  Cr‚ation de "cmTC_18b81.dir\Debug\cmTC_18b81.tlog\unsuccessfulbuild", car "AlwaysCreate" a ‚t‚ sp‚cifi‚.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /GR /Fo"cmTC_18b81.dir\Debug\\" /Fd"cmTC_18b81.dir\Debug\vc120.pdb" /Gd /TP /errorReport:queue "C:\Program Files\CMake\share\cmake-3.10\Modules\CMakeCXXCompilerABI.cpp"
+  Compilateur d'optimisation Microsoft (R) C/C++ versionÿ18.00.30501 pour x64
+  Copyright (C) Microsoft Corporation. Tous droits r‚serv‚s.
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /GR /Fo"cmTC_18b81.dir\Debug\\" /Fd"cmTC_18b81.dir\Debug\vc120.pdb" /Gd /TP /errorReport:queue "C:\Program Files\CMake\share\cmake-3.10\Modules\CMakeCXXCompilerABI.cpp"
+  
+  CMakeCXXCompilerABI.cpp
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\Tristan\Desktop\OpenWork1\OptimizationExample_Arm26\build\CMakeFiles\CMakeTmp\Debug\cmTC_18b81.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/Tristan/Desktop/OpenWork1/OptimizationExample_Arm26/build/CMakeFiles/CMakeTmp/Debug/cmTC_18b81.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/Tristan/Desktop/OpenWork1/OptimizationExample_Arm26/build/CMakeFiles/CMakeTmp/Debug/cmTC_18b81.lib" /MACHINE:X64  /machine:x64 cmTC_18b81.dir\Debug\CMakeCXXCompilerABI.obj
+  cmTC_18b81.vcxproj -> C:\Users\Tristan\Desktop\OpenWork1\OptimizationExample_Arm26\build\CMakeFiles\CMakeTmp\Debug\cmTC_18b81.exe
+FinalizeBuildStatus:
+  Suppression du fichier "cmTC_18b81.dir\Debug\cmTC_18b81.tlog\unsuccessfulbuild".
+  Mise … jour de l'horodatage "cmTC_18b81.dir\Debug\cmTC_18b81.tlog\cmTC_18b81.lastbuildstate".
+G‚n‚ration du projet "C:\Users\Tristan\Desktop\OpenWork1\OptimizationExample_Arm26\build\CMakeFiles\CMakeTmp\cmTC_18b81.vcxproj" termin‚e (cibles par d‚faut).
+
+La g‚n‚ration a r‚ussi.
+    0 Avertissement(s)
+    0 Erreur(s)
+
+Temps ‚coul‚ 00:00:00.71
+
+
+
+
+Detecting CXX [] compiler features compiled with the following output:
+Change Dir: C:/Users/Tristan/Desktop/OpenWork1/OptimizationExample_Arm26/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/12.0/bin/MSBuild.exe" "cmTC_9a4d1.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=12.0"
+Microsoft (R) Build Engine, version 12.0.30501.0
+[Microsoft .NET Framework, Version 4.0.30319.42000]
+Copyright (C) Microsoft Corporation. Tous droits r‚serv‚s.
+
+La g‚n‚ration a d‚marr‚ 30/10/2017 10:38:42.
+Projet "C:\Users\Tristan\Desktop\OpenWork1\OptimizationExample_Arm26\build\CMakeFiles\CMakeTmp\cmTC_9a4d1.vcxproj" sur le noud 1 (cibles par d‚faut).
+PrepareForBuild:
+  Cr‚ation du r‚pertoire "cmTC_9a4d1.dir\Debug\".
+  Cr‚ation du r‚pertoire "C:\Users\Tristan\Desktop\OpenWork1\OptimizationExample_Arm26\build\CMakeFiles\CMakeTmp\Debug\".
+  Cr‚ation du r‚pertoire "cmTC_9a4d1.dir\Debug\cmTC_9a4d1.tlog\".
+InitializeBuildStatus:
+  Cr‚ation de "cmTC_9a4d1.dir\Debug\cmTC_9a4d1.tlog\unsuccessfulbuild", car "AlwaysCreate" a ‚t‚ sp‚cifi‚.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /GR /Fo"cmTC_9a4d1.dir\Debug\\" /Fd"cmTC_9a4d1.dir\Debug\vc120.pdb" /Gd /TP /errorReport:queue C:\Users\Tristan\Desktop\OpenWork1\OptimizationExample_Arm26\build\CMakeFiles\feature_tests.cxx
+  Compilateur d'optimisation Microsoft (R) C/C++ versionÿ18.00.30501 pour x64
+  Copyright (C) Microsoft Corporation. Tous droits r‚serv‚s.
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /GR /Fo"cmTC_9a4d1.dir\Debug\\" /Fd"cmTC_9a4d1.dir\Debug\vc120.pdb" /Gd /TP /errorReport:queue C:\Users\Tristan\Desktop\OpenWork1\OptimizationExample_Arm26\build\CMakeFiles\feature_tests.cxx
+  
+  feature_tests.cxx
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\Tristan\Desktop\OpenWork1\OptimizationExample_Arm26\build\CMakeFiles\CMakeTmp\Debug\cmTC_9a4d1.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/Tristan/Desktop/OpenWork1/OptimizationExample_Arm26/build/CMakeFiles/CMakeTmp/Debug/cmTC_9a4d1.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/Tristan/Desktop/OpenWork1/OptimizationExample_Arm26/build/CMakeFiles/CMakeTmp/Debug/cmTC_9a4d1.lib" /MACHINE:X64  /machine:x64 cmTC_9a4d1.dir\Debug\feature_tests.obj
+  cmTC_9a4d1.vcxproj -> C:\Users\Tristan\Desktop\OpenWork1\OptimizationExample_Arm26\build\CMakeFiles\CMakeTmp\Debug\cmTC_9a4d1.exe
+FinalizeBuildStatus:
+  Suppression du fichier "cmTC_9a4d1.dir\Debug\cmTC_9a4d1.tlog\unsuccessfulbuild".
+  Mise … jour de l'horodatage "cmTC_9a4d1.dir\Debug\cmTC_9a4d1.tlog\cmTC_9a4d1.lastbuildstate".
+G‚n‚ration du projet "C:\Users\Tristan\Desktop\OpenWork1\OptimizationExample_Arm26\build\CMakeFiles\CMakeTmp\cmTC_9a4d1.vcxproj" termin‚e (cibles par d‚faut).
+
+La g‚n‚ration a r‚ussi.
+    0 Avertissement(s)
+    0 Erreur(s)
+
+Temps ‚coul‚ 00:00:00.78
+
+
+    Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
+    Feature record: CXX_FEATURE:1cxx_alias_templates
+    Feature record: CXX_FEATURE:0cxx_alignas
+    Feature record: CXX_FEATURE:0cxx_alignof
+    Feature record: CXX_FEATURE:0cxx_attributes
+    Feature record: CXX_FEATURE:0cxx_attribute_deprecated
+    Feature record: CXX_FEATURE:1cxx_auto_type
+    Feature record: CXX_FEATURE:0cxx_binary_literals
+    Feature record: CXX_FEATURE:0cxx_constexpr
+    Feature record: CXX_FEATURE:1cxx_contextual_conversions
+    Feature record: CXX_FEATURE:1cxx_decltype
+    Feature record: CXX_FEATURE:0cxx_decltype_auto
+    Feature record: CXX_FEATURE:1cxx_default_function_template_args
+    Feature record: CXX_FEATURE:1cxx_defaulted_functions
+    Feature record: CXX_FEATURE:0cxx_defaulted_move_initializers
+    Feature record: CXX_FEATURE:1cxx_delegating_constructors
+    Feature record: CXX_FEATURE:0cxx_deleted_functions
+    Feature record: CXX_FEATURE:0cxx_digit_separators
+    Feature record: CXX_FEATURE:1cxx_enum_forward_declarations
+    Feature record: CXX_FEATURE:1cxx_explicit_conversions
+    Feature record: CXX_FEATURE:1cxx_extended_friend_declarations
+    Feature record: CXX_FEATURE:1cxx_extern_templates
+    Feature record: CXX_FEATURE:1cxx_final
+    Feature record: CXX_FEATURE:0cxx_func_identifier
+    Feature record: CXX_FEATURE:0cxx_generalized_initializers
+    Feature record: CXX_FEATURE:0cxx_generic_lambdas
+    Feature record: CXX_FEATURE:0cxx_inheriting_constructors
+    Feature record: CXX_FEATURE:0cxx_inline_namespaces
+    Feature record: CXX_FEATURE:1cxx_lambdas
+    Feature record: CXX_FEATURE:0cxx_lambda_init_captures
+    Feature record: CXX_FEATURE:1cxx_local_type_template_args
+    Feature record: CXX_FEATURE:1cxx_long_long_type
+    Feature record: CXX_FEATURE:0cxx_noexcept
+    Feature record: CXX_FEATURE:0cxx_nonstatic_member_init
+    Feature record: CXX_FEATURE:1cxx_nullptr
+    Feature record: CXX_FEATURE:1cxx_override
+    Feature record: CXX_FEATURE:1cxx_range_for
+    Feature record: CXX_FEATURE:1cxx_raw_string_literals
+    Feature record: CXX_FEATURE:0cxx_reference_qualified_functions
+    Feature record: CXX_FEATURE:0cxx_return_type_deduction
+    Feature record: CXX_FEATURE:1cxx_right_angle_brackets
+    Feature record: CXX_FEATURE:1cxx_rvalue_references
+    Feature record: CXX_FEATURE:0cxx_sizeof_member
+    Feature record: CXX_FEATURE:1cxx_static_assert
+    Feature record: CXX_FEATURE:1cxx_strong_enums
+    Feature record: CXX_FEATURE:1cxx_template_template_parameters
+    Feature record: CXX_FEATURE:0cxx_thread_local
+    Feature record: CXX_FEATURE:1cxx_trailing_return_types
+    Feature record: CXX_FEATURE:0cxx_unicode_literals
+    Feature record: CXX_FEATURE:1cxx_uniform_initialization
+    Feature record: CXX_FEATURE:0cxx_unrestricted_unions
+    Feature record: CXX_FEATURE:0cxx_user_literals
+    Feature record: CXX_FEATURE:0cxx_variable_templates
+    Feature record: CXX_FEATURE:1cxx_variadic_macros
+    Feature record: CXX_FEATURE:1cxx_variadic_templates

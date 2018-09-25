@@ -1,0 +1,24 @@
+﻿La génération a démarré 03/12/2017 15:22:11.
+     1>Projet "C:\Users\Tristan\Desktop\OpenWork1\ExampleMain\build\exampleMain.vcxproj" sur le nœud 2 (Build cible(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /I\Vendors /I"C:\OpenSim 3.3\sdk\include\SimTK\include" /I"C:\OpenSim 3.3\sdk\include" /nologo /W3 /WX- /O2 /Ob2 /D WIN32 /D _WINDOWS /D NDEBUG /D "CMAKE_INTDIR=\"Release\"" /D _MBCS /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /GR /Fo"exampleMain.dir\Release\\" /Fd"exampleMain.dir\Release\vc120.pdb" /Gd /TP /errorReport:prompt TugOfWar_Addground.cpp
+         TugOfWar_Addground.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Tristan\Desktop\OpenWork1\ExampleMain\build\Release\exampleMain.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"C:/OpenSim 3.3/sdk/lib" /LIBPATH:"C:/OpenSim 3.3/sdk/lib/Release" /LIBPATH:"C:/OpenSim 3.3/lib" /LIBPATH:"C:/OpenSim 3.3/lib/Release" /LIBPATH:"C:/OpenSim 3.3/bin" /LIBPATH:"C:/OpenSim 3.3/bin/Release" osimSimulation.lib osimActuators.lib osimCommon.lib osimAnalyses.lib osimTools.lib OpenSim_SimTKcommon.lib OpenSim_SimTKmath.lib OpenSim_SimTKsimbody.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:"C:/Users/Tristan/Desktop/OpenWork1/ExampleMain/build/Release/exampleMain.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/Tristan/Desktop/OpenWork1/ExampleMain/build/Release/exampleMain.lib" /MACHINE:X64  /machine:x64 exampleMain.dir\Release\TugOfWar_Addground.obj
+         exampleMain.vcxproj -> C:\Users\Tristan\Desktop\OpenWork1\ExampleMain\build\Release\exampleMain.exe
+       PostBuildEvent:
+         setlocal
+         "C:\Program Files\CMake\bin\cmake.exe" -E copy C:/Users/Tristan/Desktop/OpenWork1/ExampleMain/blockMesh.obj C:/Users/Tristan/Desktop/OpenWork1/ExampleMain/build
+         if %errorlevel% neq 0 goto :cmEnd
+         :cmEnd
+         endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+         :cmErrorLevel
+         exit /b %1
+         :cmDone
+         if %errorlevel% neq 0 goto :VCEnd
+         :VCEnd
+     1>Génération du projet "C:\Users\Tristan\Desktop\OpenWork1\ExampleMain\build\exampleMain.vcxproj" terminée (Build cible(s)).
+
+La génération a réussi.
+
+Temps écoulé 00:00:05.92

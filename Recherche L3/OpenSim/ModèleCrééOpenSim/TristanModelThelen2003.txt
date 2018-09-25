@@ -1,0 +1,6 @@
+#include <OpenSim/Actuators/Millard2012EquillibriumMuscle.h>
+namespace OpenSim {
+  
+class FatigableMuscle : public Millard2012EquilibriumMuscle {
+OpenSim_DECLARE_CONCRETE_OBJECT(FatigableMuscle,
+                                    Millard2012EquilibriumMuscle);
